@@ -15,3 +15,12 @@ def index(request):
 
 def contact(request):
 	return render_to_response("contact.html",locals(),RequestContext(request))
+
+def about(request):
+	return render_to_response("about.html",locals(),RequestContext(request))
+
+def dealership(request):
+	return render_to_response("dealership.html",locals(),RequestContext(request))
+
+def careers(request):
+	return render_to_response("careers.html",locals(),RequestContext(request))

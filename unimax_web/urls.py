@@ -21,4 +21,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', index, name='index'),
     url(r'^contact/$', contact, name='contact'),
+    url(r'^about/$', about, name='about'),
+    url(r'^dealership/$', dealership, name='dealership'),
+    url(r'^careers/$', careers, name='careers'),
 ]
