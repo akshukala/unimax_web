@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from uni_app import urls as uni_app_urls
+from uni_app.views import *
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$',include(uni_app_urls)),
+    url(r'^$', index, name='index'),
+    url(r'^contact/$', contact, name='contact'),
 ]

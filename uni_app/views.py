@@ -12,3 +12,6 @@ import json
         	
 def index(request):
 	return render_to_response("index.html",locals(),RequestContext(request))
+
+def contact(request):
+	return render_to_response("contact.html",locals(),RequestContext(request))
