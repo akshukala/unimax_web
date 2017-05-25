@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div>
+	<ul class="rslides" id="slider1">
+      <li><img src="{% static 'images/ba11.jpg' %}" alt=""></li>
+      <li><img src="{% static 'images/2.jpg' %}" alt=""></li>
+      <li><img src="{% static 'images/3.jpg' %}" alt=""></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#slider1").responsiveSlides({
+        maxwidth: 2500,
+        speed: 800
+      });
+	});
+</script>
+{% endblock %}
