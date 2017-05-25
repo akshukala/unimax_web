@@ -24,3 +24,6 @@ def dealership(request):
 
 def careers(request):
 	return render_to_response("careers.html",locals(),RequestContext(request))
+
+def gallery(request):
+	return render_to_response("gallery.html",locals(),RequestContext(request))

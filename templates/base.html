@@ -195,7 +195,7 @@ ul {
 														<li><a href="#">Pliers</a></li>
 														<li><a href="#">Fastners</a></li>
 														<li><a href="#">Bolts</a></li>
-														<li><a href="#">Hinges</a></li>
+														<li><a id="hinges_a" href="#">Hinges</a></li>
 													</ul>	
 												</div>							
 											</div>
@@ -268,7 +268,7 @@ ul {
 									</div>				
 								</li> -->
 								<li><a class="color3" href="/dealership/">Dealership</a></li>
-								<li><a class="color4" href="#">Gallery</a></li>
+								<li><a class="color4" href="/gallery/">Gallery</a></li>
 					            <li><a class="color5" href="/careers/">Careers</a></li>
 					            <li ><a class="color6" href="/about/">About Us</a></li>
 					            <li ><a class="color6" href="/contact/">Contact Us</a></li>
@@ -419,6 +419,10 @@ ul {
 
 			$("#drill_a").hover(function(){
 				$("#hover_img").attr('src', "{% static 'images/drill-bits.jpg' %}" );
+			});
+
+			$("#drill_a").hover(function(){
+				$("#hover_img").attr('src', "{% static 'images/hinges.jpg' %}" );
 			});
 		});
 	</script>
