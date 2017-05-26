@@ -27,3 +27,6 @@ def careers(request):
 
 def gallery(request):
 	return render_to_response("gallery.html",locals(),RequestContext(request))
+
+def products(request):
+	return render_to_response("products.html",locals(),RequestContext(request))

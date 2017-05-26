@@ -1,6 +1,247 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+<style type="text/css">
+	.ul-icons {
+  padding-left: 10px;
+}
+.ul-icons li {
+  list-style-type: none;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.ul-icons li i {
+  width: 20px;
+  height: 20px;
+  background: #f67777;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  line-height: 20px;
+  margin-right: 10px;
+}
+.heading h1,
+.heading h2,
+.heading h3,
+.heading h4,
+.heading h5 {
+  display: inline-block;
+  border-bottom: solid 5px #f67777;
+  line-height: 1.1;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.heading h1 i.fa,
+.heading h2 i.fa,
+.heading h3 i.fa,
+.heading h4 i.fa,
+.heading h5 i.fa {
+  display: inline-block;
+  background: #f67777;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  line-height: 30px;
+  border-radius: 15px;
+}
+
+.team-member {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.team-member h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  letter-spacing: 0.08em;
+}
+.team-member h3 a {
+  color: #555555;
+}
+.team-member p.role {
+  color: #999999;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.team-member .social {
+  margin-bottom: 20px;
+}
+.team-member .social a {
+  margin: 0 10px 0 0;
+  color: #fff;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  line-height: 26px;
+  font-size: 15px;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  vertical-align: bottom;
+}
+.team-member .social a i {
+  vertical-align: bottom;
+  line-height: 26px;
+}
+.team-member .social a.facebook {
+  background-color: #4460ae;
+}
+.team-member .social a.gplus {
+  background-color: #c21f25;
+}
+.team-member .social a.twitter {
+  background-color: #3cf;
+}
+.team-member .social a.instagram {
+  background-color: #cd4378;
+}
+.team-member .social a.email {
+  background-color: #4a7f45;
+}
+.team-member .text p {
+  color: #999999;
+  font-size: 12px;
+}
+.team-member .social,
+.team-member-detail .social {
+  margin-bottom: 20px;
+}
+.team-member .social a,
+.team-member-detail .social a {
+  margin: 0 10px 0 0;
+  color: #fff;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  line-height: 26px;
+  font-size: 15px;
+  text-align: center;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  vertical-align: bottom;
+}
+.team-member .social a i,
+.team-member-detail .social a i {
+  vertical-align: bottom;
+  line-height: 26px;
+}
+.team-member .social a.facebook,
+.team-member-detail .social a.facebook {
+  background-color: #4460ae;
+}
+.team-member .social a.gplus,
+.team-member-detail .social a.gplus {
+  background-color: #c21f25;
+}
+.team-member .social a.twitter,
+.team-member-detail .social a.twitter {
+  background-color: #3cf;
+}
+.team-member .social a.instagram,
+.team-member-detail .social a.instagram {
+  background-color: #cd4378;
+}
+.team-member .social a.email,
+.team-member-detail .social a.email {
+  background-color: #4a7f45;
+}
+[data-animate] {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.testimonials {
+  padding: 0;
+  margin-bottom: 40px;
+}
+.testimonials .item {
+  list-style-type: none;
+  margin: 0 5px;
+  background: #fff;
+  padding-bottom: 60px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.testimonials .item .testimonial {
+  position: relative;
+  padding: 20px;
+}
+.testimonials .item .testimonial:before,
+.testimonials .item .testimonial:after {
+  content: " ";
+  display: table;
+}
+.testimonials .item .testimonial:after {
+  clear: both;
+}
+.testimonials .item .testimonial:before,
+.testimonials .item .testimonial:after {
+  content: " ";
+  display: table;
+}
+.testimonials .item .testimonial:after {
+  clear: both;
+}
+.testimonials .item .testimonial .text {
+  color: #999999;
+  margin-bottom: 40px;
+}
+.testimonials .item .testimonial .bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+  height: 50px;
+}
+.testimonials .item .testimonial .bottom .icon {
+  color: #38a7bb;
+  font-size: 30px;
+  float: left;
+  width: 20%;
+}
+.testimonials .item .testimonial .name-picture {
+  float: right;
+  width: 80%;
+  text-align: right;
+}
+.testimonials .item .testimonial .name-picture h5 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.testimonials .item .testimonial .name-picture p {
+  color: #999999;
+  margin: 0;
+  font-size: 12px;
+}
+.testimonials .item .testimonial .name-picture img {
+  float: right;
+  width: 60px;
+  border-radius: 30px;
+  margin-left: 10px;
+}
+
+
+</style>
+
+<script src="{% static 'js/front.js' %}"> </script>
+<script src="{% static 'js/waypoints.min.js' %}"> </script>
 
 <div class="banner-top">
 	<div class="container">
@@ -11,24 +252,151 @@
 </div>	
 <br><br>
 <div class="container">
-	<div class="row" >
-	    <div class="col-md-8 col-md-offset-2">
-		
-			<div class="form-group">
-				<h3>Welcome to Unimax Enterprises</h3><br>
-				<p>Unimax is a consumer oriented company we are committed to quality service & quality product.
-					Over the past 35 years, our directors & their families have built a solid & strong reputation on high quality products and service. Unimax enterprises deal is all types of hardware like garden hose, grinding and cutting tools, hammers, measuring tapes, screw drivers, pliers, fastners, nuts, bolts, welding rods.<br> <br> &emsp; &emsp; We do planning for other dealers and consumers. Our network of dependable worldwide suppliers guarantee the best quality & service. Adding to this ensure value for money on all our products. Unimax is the ONE STOP solution for any sort of hardware product with unimaginable service & quality. We are been associated with mostly all the leading hardware retail shops, leading promoters and industrialits in and around our base.
+	<section>
+        <div class="row">
+            <div class="col-md-12">
+            	<div class="heading">
+                    <h2>About UniMax Enterprises</h2>
+                </div>
+                <br>
+                <p>Unimax is a consumer oriented company we are committed to quality service & quality product.
+				Over the past 35 years, our directors & their families have built a solid & strong reputation on high quality products and service. Unimax enterprises deal is all types of hardware like garden hose, grinding and cutting tools, hammers, measuring tapes, screw drivers, pliers, fastners, nuts, bolts, welding rods.<br> We do planning for other dealers and consumers. Our network of dependable worldwide suppliers guarantee the best quality & service. Adding to this ensure value for money on all our products. Unimax is the ONE STOP solution for any sort of hardware product with unimaginable service & quality. We are been associated with mostly all the leading hardware retail shops, leading promoters and industrialits in and around our base.
 				</p>
-		
-				<br><br><br>
-				<div class="form-group">
-					<h3>Directors Message</h3><br>
-					<p> &emsp; &emsp; Unimax enterprises focuses on high quality product and service. This is the reason we have highly educated directors and staff at our head office, corporate office and the warehouse we also have a great team of finance and legal advisors who are the backbone of our company. Its our responsibility to share our consumers thoughts and semtiments and this is the reason we provide the most reliable and quality products to our clients.</p>
- 				</div>
-			</div><!-- end for class "row" -->
-		</div><!-- end for class "container" -->
-	</div>
-</div>
+			</div>
+		</div>
+	</section><br>
+    <section>
+        <div class="row">
+        	<div class="col-md-6">
+        		<div class="heading">
+        			<h2>Our services</h2>
+        		</div>
+        		<br>
+                <ul class="ul-icons">
+                	<li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                	<li><i class="fa fa-check"></i>Aliquam tincidunt mauris eu risus.</li>
+                	<li><i class="fa fa-check"></i>Vestibulum auctor dapibus neque.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+               	<div class="heading">
+                    <h2>Our values</h2>
+                </div>
+                <br>
+				<ul class="ul-icons">
+                    <li><i class="fa fa-check"></i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                    <li><i class="fa fa-check"></i>Aliquam tincidunt mauris eu risus.</li>
+                    <li><i class="fa fa-check"></i>Vestibulum auctor dapibus neque.</li>
+              	</ul>
+            </div>
+      	</div>
+    </section>
 
+    <section class="bar background-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading">
+                                <h2>Meet our team</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3">
+                            <div class="team-member" data-animate="fadeInUp">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="{% static 'images/person-1.jpg' %}" alt="" class="img-responsive img-circle">
+                                    </a>
+                                </div>
+                                <h3><a href="#">Han Solo</a></h3>
+                                <p class="role">Founder</p>
+                                <div class="social">
+                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                </div>
+                                <div class="text">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                </div>
+                            </div>
+                            <!-- /.team-member -->
+                        </div>
+                        <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
+                            <div class="team-member">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="{% static 'images/person-2.jpg' %}" alt="" class="img-responsive img-circle">
+                                    </a>
+                                </div>
+                                <h3><a href="#">Luke Skywalker</a></h3>
+                                <p class="role">CTO</p>
+
+                                <div class="social">
+                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                </div>
+                                <div class="text">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                </div>
+                            </div>
+                            <!-- /.team-member -->
+                        </div>
+                        <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
+                            <div class="team-member">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="{% static 'images/person-3.png'%}" alt="" class="img-responsive img-circle">
+                                    </a>
+                                </div>
+                                <h3><a href="#">Princess Leia</a></h3>
+                                <p class="role">Team Leader</p>
+                                <div class="social">
+                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                </div>
+                                <div class="text">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                </div>
+                            </div>
+                            <!-- /.team-member -->
+                        </div>
+                        <div class="col-md-3 col-sm-3" data-animate="fadeInUp">
+                            <div class="team-member">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="{% static 'images/person-4.jpg' %}" alt="" class="img-responsive img-circle">
+                                    </a>
+                                </div>
+                                <h3><a href="#">Jabba Hut</a></h3>
+                                <p class="role">Lead Developer</p>
+                                <div class="social">
+                                    <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                                    <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                    <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                                </div>
+                                <div class="text">
+                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                </div>
+                            </div>
+                            <!-- /.team-member -->
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </section>
+
+    
+
+</div>
 
 {% endblock %}
